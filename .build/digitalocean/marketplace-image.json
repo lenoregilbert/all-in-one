@@ -20,12 +20,6 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "inline": [
-        "cloud-init status --wait"
-      ]
-    },
-    {
       "type": "file",
       "source": "files/var/",
       "destination": "/var/"
