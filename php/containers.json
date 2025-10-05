@@ -377,6 +377,13 @@
       "expose": [
         "9980"
       ],
+      "ports": [
+        {
+          "ip_binding": "%APACHE_IP_BINDING%",
+          "port_number": "9980",
+          "protocol": "tcp"
+        }
+      ],
       "internal_port": "9980",
       "environment": [
         "aliasgroup1=https://%NC_DOMAIN%:443,http://nextcloud-aio-apache:23973",
