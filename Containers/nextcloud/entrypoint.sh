@@ -650,7 +650,7 @@ php /var/www/html/occ config:app:set notify_push base_endpoint --value="https://
 if [ "$COLLABORA_ENABLED" = 'yes' ]; then
     set -x
     if echo "$COLLABORA_HOST" | grep -q "nextcloud-.*-collabora"; then
-        COLLABORA_HOST="$NC_DOMAIN"
+        COLLABORA_HOST="docs.cloud.norinet.net:9980"
     fi
     set +x
     # Remove richdcoumentscode if it should be incorrectly installed
