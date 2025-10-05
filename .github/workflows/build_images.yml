@@ -52,7 +52,7 @@ jobs:
           platforms: linux/amd64
           no-cache: true
           push: true
-          tags: ghcr.io/nextcloud-releases/${{ matrix.container.name }}:develop
+          tags: ghcr.io/lenoregilbert/${{ matrix.container.name }}:develop
 
   build-arm64:
     runs-on: ubuntu-24.04-arm
@@ -98,4 +98,4 @@ jobs:
           platforms: linux/arm64
           no-cache: true
           push: true
-          tags: ghcr.io/nextcloud-releases/${{ matrix.container.name }}:develop-arm64
+          tags: ghcr.io/lenoregilbert/${{ matrix.container.name }}:develop-arm64
