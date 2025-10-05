@@ -47,10 +47,10 @@ jobs:
         set +x
         
         # create multiarch image
-        docker buildx imagetools create --tag ghcr.io/nextcloud-releases/$AIO_NAME\:beta ghcr.io/nextcloud-releases/$AIO_NAME\:develop ghcr.io/nextcloud-releases/$AIO_NAME\:develop-arm64
+        docker buildx imagetools create --tag ghcr.io/lenoregilbert/$AIO_NAME\:beta ghcr.io/lenoregilbert/$AIO_NAME\:develop ghcr.io/lenoregilbert/$AIO_NAME\:develop-arm64
 
         # arm64
-        docker buildx imagetools create --tag ghcr.io/nextcloud-releases/$AIO_NAME\:beta-arm64 ghcr.io/nextcloud-releases/$AIO_NAME\:develop ghcr.io/nextcloud-releases/$AIO_NAME\:develop-arm64
+        docker buildx imagetools create --tag ghcr.io/lenoregilbert/$AIO_NAME\:beta-arm64 ghcr.io/lenoregilbert/$AIO_NAME\:develop ghcr.io/lenoregilbert/$AIO_NAME\:develop-arm64
 
     - name: Login to DockerHub
       if: matrix.name == 'all-in-one'
@@ -63,7 +63,7 @@ jobs:
       if: matrix.name == 'all-in-one'
       run: |
         # create multiarch image
-        docker buildx imagetools create --tag nextcloud/all-in-one\:beta ghcr.io/nextcloud-releases/all-in-one\:develop ghcr.io/nextcloud-releases/all-in-one\:develop-arm64
+        docker buildx imagetools create --tag nextcloud/all-in-one\:beta ghcr.io/lenoregilbert/all-in-one\:develop ghcr.io/lenoregilbert/all-in-one\:develop-arm64
         
         # arm64
-        docker buildx imagetools create --tag nextcloud/all-in-one\:beta-arm64 ghcr.io/nextcloud-releases/all-in-one\:develop ghcr.io/nextcloud-releases/all-in-one\:develop-arm64
+        docker buildx imagetools create --tag nextcloud/all-in-one\:beta-arm64 ghcr.io/lenoregilbert/all-in-one\:develop ghcr.io/lenoregilbert/all-in-one\:develop-arm64
