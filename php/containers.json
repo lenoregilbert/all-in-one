@@ -396,7 +396,7 @@
       "restart": "unless-stopped",
       "nextcloud_exec_commands": [
         "echo 'Activating Collabora config...'",
-        "php /var/www/html/occ richdocuments:activate-config --wopi-url='https://docs.cloud.norinet.net:9980' --callback-url='https://docs.cloud.norinet.net:9980'"
+        "php /var/www/html/occ richdocuments:activate-config --wopi-url='https://docs.cloud.norinet.net:9980' --callback-url='http://nextcloud-aio-apache:23973'"
       ],
       "profiles": [
         "collabora"
