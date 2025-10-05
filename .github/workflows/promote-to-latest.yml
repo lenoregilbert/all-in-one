@@ -61,22 +61,22 @@ jobs:
         set +x
         
         # multiarch
-        docker buildx imagetools create --tag ghcr.io/nextcloud-releases/$AIO_NAME\:latest ghcr.io/nextcloud-releases/$AIO_NAME\:beta
-        docker buildx imagetools create --tag ghcr.io/nextcloud-releases/$AIO_NAME\:"$DATE" ghcr.io/nextcloud-releases/$AIO_NAME\:beta
+        docker buildx imagetools create --tag ghcr.io/lenoregilbert/$AIO_NAME\:latest ghcr.io/lenoregilbert/$AIO_NAME\:beta
+        docker buildx imagetools create --tag ghcr.io/lenoregilbert/$AIO_NAME\:"$DATE" ghcr.io/lenoregilbert/$AIO_NAME\:beta
         
         # arm64
-        docker buildx imagetools create --tag ghcr.io/nextcloud-releases/$AIO_NAME\:latest-arm64 ghcr.io/nextcloud-releases/$AIO_NAME\:beta-arm64
+        docker buildx imagetools create --tag ghcr.io/lenoregilbert/$AIO_NAME\:latest-arm64 ghcr.io/lenoregilbert/$AIO_NAME\:beta-arm64
         
         if [ "$AIO_NAME" == "aio-nextcloud" ]; then
             set -x
-            docker pull ghcr.io/nextcloud-releases/$AIO_NAME\:beta
-            PHP_VERSION="$(docker inspect ghcr.io/nextcloud-releases/$AIO_NAME\:beta | grep PHP_VERSION | grep -oP '[0-8.]+' | sed 's|\.[0-9]\+$||')"
-            docker image remove --force ghcr.io/nextcloud-releases/$AIO_NAME\:beta
+            docker pull ghcr.io/lenoregilbert/$AIO_NAME\:beta
+            PHP_VERSION="$(docker inspect ghcr.io/lenoregilbert/$AIO_NAME\:beta | grep PHP_VERSION | grep -oP '[0-8.]+' | sed 's|\.[0-9]\+$||')"
+            docker image remove --force ghcr.io/lenoregilbert/$AIO_NAME\:beta
             if [ -n "$PHP_VERSION" ]; then
                 # multiarch
-                docker buildx imagetools create --tag ghcr.io/nextcloud-releases/$AIO_NAME\:php"$PHP_VERSION"-latest ghcr.io/nextcloud-releases/$AIO_NAME\:beta
+                docker buildx imagetools create --tag ghcr.io/lenoregilbert/$AIO_NAME\:php"$PHP_VERSION"-latest ghcr.io/lenoregilbert/$AIO_NAME\:beta
                 # arm64
-                docker buildx imagetools create --tag ghcr.io/nextcloud-releases/$AIO_NAME\:php"$PHP_VERSION"-latest-arm64 ghcr.io/nextcloud-releases/$AIO_NAME\:beta-arm64
+                docker buildx imagetools create --tag ghcr.io/lenoregilbert/$AIO_NAME\:php"$PHP_VERSION"-latest-arm64 ghcr.io/lenoregilbert/$AIO_NAME\:beta-arm64
             fi
             set +x
         fi
@@ -106,5 +106,5 @@ jobs:
           docker buildx imagetools create --tag nextcloud/all-in-one\:latest-arm64 nextcloud/all-in-one\:beta-arm64
         else
           # Publish date images also on docker hub
-          docker buildx imagetools create --tag nextcloud/$AIO_NAME\:"$DATE" ghcr.io/nextcloud-releases/$AIO_NAME\:beta
+          docker buildx imagetools create --tag nextcloud/$AIO_NAME\:"$DATE" ghcr.io/lenoregilbert/$AIO_NAME\:beta
         fi
