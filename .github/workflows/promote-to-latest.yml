@@ -100,11 +100,11 @@ jobs:
         # Handle all-in-one image seperately
         if [ "$AIO_NAME" = "all-in-one" ]; then
           # multiarch
-          docker buildx imagetools create --tag nextcloud/all-in-one\:latest nextcloud/all-in-one\:beta
+          docker buildx imagetools create --tag lenoregilbert/all-in-one\:latest lenoregilbert/all-in-one\:beta
           
           # arm64
-          docker buildx imagetools create --tag nextcloud/all-in-one\:latest-arm64 nextcloud/all-in-one\:beta-arm64
+          docker buildx imagetools create --tag lenoregilbert/all-in-one\:latest-arm64 lenoregilbert/all-in-one\:beta-arm64
         else
           # Publish date images also on docker hub
-          docker buildx imagetools create --tag nextcloud/$AIO_NAME\:"$DATE" ghcr.io/lenoregilbert/$AIO_NAME\:beta
+          docker buildx imagetools create --tag lenoregilbert/$AIO_NAME\:"$DATE" ghcr.io/lenoregilbert/$AIO_NAME\:beta
         fi
