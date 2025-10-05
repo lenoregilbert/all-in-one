@@ -986,7 +986,7 @@ readonly class DockerActionManager {
     }
 
     public function isNextcloudImageOutdated(): bool {
-        $createdTime = $this->GetCreatedTimeOfNextcloudImage('ghcr.io/nextcloud-releases/aio-nextcloud');
+        $createdTime = $this->GetCreatedTimeOfNextcloudImage('ghcr.io/lenoregilbert/aio-nextcloud');
 
         if ($createdTime === null) {
             $createdTime = $this->GetCreatedTimeOfNextcloudImage('nextcloud/aio-nextcloud');

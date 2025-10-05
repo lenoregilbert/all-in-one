@@ -29,7 +29,7 @@ build {
     "source.amazon-ebs.ubuntu"
   ]
   provisioner "shell" {
-    inline = ["curl -sL -o build.sh https://raw.githubusercontent.com/nextcloud-releases/all-in-one/main/.build/ova/build.sh", "chmod +x build.sh", "./build.sh"]
+    inline = ["curl -sL -o build.sh https://raw.githubusercontent.com/lenoregilbert/all-in-one/main/.build/ova/build.sh", "chmod +x build.sh", "./build.sh"]
     execute_command = "{{.Vars}} bash '{{.Path}}'"
   }
 }

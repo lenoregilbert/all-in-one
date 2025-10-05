@@ -24,6 +24,6 @@ source "googlecompute" "nextcloud-aio" {
 build {
   sources = ["sources.googlecompute.nextcloud-aio"]
   provisioner "shell" {
-    inline = ["curl -fsSL https://raw.githubusercontent.com/nextcloud-releases/all-in-one/main/.build/ova/build.sh | sed 's|sudo||' | bash"]
+    inline = ["curl -fsSL https://raw.githubusercontent.com/lenoregilbert/all-in-one/main/.build/ova/build.sh | sed 's|sudo||' | bash"]
   }
 }
